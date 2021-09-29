@@ -32,7 +32,7 @@ class ScriptService():
 
     def _add_hotkey(self, keys, callback, args=()):
         # lambda bug: https://github.com/boppreh/keyboard/issues/493
-        keyboard.add_hotkey(keys, lambda: keyboard.call_later(callback, args), suppress=True)
+        keyboard.add_hotkey(keys, lambda: keyboard.call_later(callback, args))
 
     def _on_reload(self):
         logger.info("Reload (pressed \"{}\")", self._hotkeys["reload"])
