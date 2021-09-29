@@ -9,7 +9,7 @@ class ScriptService():
 
     def __init__(self):
         format = "{time:DD-MM-YYYY HH:mm:ss} | {level} | {message}"
-        logger.add("logs.txt", format=format)
+        logger.add("logs.txt", format=format, retention="3 days")
         values = get_settings()
         id = values["scriptId"] if values["scriptId"] else getenv("SCRIPT_ID")
         self._script = AppsScript(id)
