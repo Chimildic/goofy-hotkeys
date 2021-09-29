@@ -1,0 +1,8 @@
+/.vscode
+/src/__pycache__
+/src/output
+/src/env
+/src/logs.txt
+/src/client/dev.env
+/src/client/client_secret.json
+/src/client/credentials

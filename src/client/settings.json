@@ -1,0 +1,25 @@
+{
+    "scriptId": "",
+    "hotkeys": {
+        "exit": "shift+f4",
+        "reload": "shift+esc",
+        "goofy": [
+            {
+                "keys": "ctrl+shift+a",
+                "function": "debug"
+            },
+            {
+                "keys": "alt+c",
+                "function": "updateEveryDayPlaylists"
+            },
+            {
+                "keys": "alt+x, space",
+                "function": "savePlayingTrack"
+            },
+            {
+                "keys": "shift+5",
+                "function": "insertTracksToQueue"
+            }
+        ]
+    }
+}
