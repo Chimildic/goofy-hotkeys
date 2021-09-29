@@ -26,13 +26,17 @@ class ScriptService():
             k, f = item["keys"], item["function"]
             self._add_hotkey(k, self._on_callback, args=(f, k))
 
+    def _unregister_hotkeys(self):
+        for item in self._hotkeys["goofy"]:
+            keyboard.clear_hotkey(item["keys"])
+
     def _add_hotkey(self, keys, callback, args=()):
         # lambda bug: https://github.com/boppreh/keyboard/issues/493
         keyboard.add_hotkey(keys, lambda: keyboard.call_later(callback, args), suppress=True)
 
     def _on_reload(self):
         logger.info("Reload (pressed \"{}\")", self._hotkeys["reload"])
-        keyboard.clear_all_hotkeys()
+        self._unregister_hotkeys()
         self._hotkeys = get_settings()["hotkeys"]
         self._register_hotkeys()
 
