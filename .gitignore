@@ -6,3 +6,4 @@
 /src/client/dev.env
 /src/client/client_secret.json
 /src/client/credentials
+/src/*.spec

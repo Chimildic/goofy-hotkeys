@@ -9,9 +9,12 @@
    - `https://tasker.joaoapps.com/auth.html` 
    - `http://localhost:8080/`
 3. После сохранения, вернитесь к `web client` и нажмите сверху кнопку `download json`. Переименуйте полученный файл в `client_secret` (расширение `.json`)
-4. Скачайте файл `goofy-hotkeys.exe` из [релизов](https://github.com/Chimildic/goofy-hotkeys/releases) в папку `C:\Program Files\goofy hotkeys`
-5. Запустите его. Появится папка `client`. Скопируйте в нее файл `client_secret`
-6. Откройте файл `settings` через блокнот. Зайдите в проект goofy [Apps Script](https://script.google.com/home/all), нажмите _начать развертывание > управление развертываниями_ и скопируйте _идентификатор развертывания_ в файл `settings` (справа от `scriptId` в кавычки)
+4. Скачайте файл `goofy-hotkeys.exe` из [релизов](https://github.com/Chimildic/goofy-hotkeys/releases) и поместите его в папку `goofy hotkeys` (туда где вы ее случайно не удалите)
+
+> Выберите другую папку, если получите ошибку `отказано в доступе`
+
+1. Запустите его. Появится папка `client`. Скопируйте в нее файл `client_secret`
+2. Откройте файл `settings` через блокнот. Зайдите в проект goofy [Apps Script](https://script.google.com/home/all), нажмите _начать развертывание > управление развертываниями_ и скопируйте _идентификатор развертывания_ в файл `settings` (справа от `scriptId` в кавычки)
 
 ### Настройка
 - Настройте горячие клавиши по приведенному в `settings` образцу:
@@ -36,5 +39,5 @@ pip install pyinstaller
 ```
 Со следующей командой
 ```
-pyinstaller --onefile --windowed --add-data "./client/.env;./client" --add-data "./client/settings.json;./client" --name "goofy-hotkeys" --icon "./assets/logo.ico" --distpath "./output/dist" --workpath "./output/build"  main.py
+pyinstaller --onefile --windowed --add-data "./client/.env;./client" --add-data "./client/settings.json;./client" --name "goofy-hotkeys" --icon "./assets/logo.ico" --distpath "./output/dist" --workpath "./output/build" --specpath "./output/build"  main.py
 ```
